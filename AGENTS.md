@@ -11,4 +11,4 @@ This file is the project's committed home for project-intrinsic agent knowledge:
 - Projects are one `<li>` per project (link — one-line description) under the `<!-- PROJECTS -->` comment; add/delete a line to change the list.
 - **No email on the page** — captain removed it on purpose; contact is the GitHub profile link only.
 - Card blurbs were taken from the live GitHub repo descriptions (`gh api repos/gapsong/<name> --jq .description`). `lichess-kill-anim` has **no** GitHub description; its card links to its showcase page at `https://gapsong.github.io/lichess-kill-anim/` (built separately in its own repo's Pages).
-- Do not feature the upstream forks (peft, transformers, optimum, IsaacLab, …) as own projects.
+- Do not feature the upstream forks (peft, transformers, optimum, IsaacLab, and also **axi** — it's a fork of kunchenguid/axi, …) as own projects. Merged upstream PRs belong in the "open source contributions" section instead (currently the two huggingface/peft PRs #2571 and #2664).
