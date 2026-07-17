@@ -3,287 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>gapsong — engineer, Berlin</title>
-<meta name="description" content="Portfolio of gapsong: LLM quantization research, agent ergonomics, and developer tools.">
+<title>gapsong</title>
+<meta name="description" content="gapsong — software engineer in Berlin. LLM quantization, agent ergonomics, small tools.">
 <style>
-  /* ---------- theme ---------- */
-  :root {
-    --bg: #faf9f7;
-    --surface: #ffffff;
-    --text: #1c1b1a;
-    --muted: #5f5b55;
-    --border: #e4e1db;
-    --accent: #157a4c;
-    --accent-soft: #e7f3ec;
-    --code-bg: #f2f0ec;
-    color-scheme: light dark;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #121110;
-      --surface: #1b1a18;
-      --text: #e9e6e1;
-      --muted: #a39e96;
-      --border: #2c2a27;
-      --accent: #5fd39a;
-      --accent-soft: #17281f;
-      --code-bg: #23221f;
-    }
-  }
-
-  /* ---------- base ---------- */
-  * { box-sizing: border-box; }
   body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  .mono { font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; text-underline-offset: 3px; }
-  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-
-  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
-
-  /* ---------- hero ---------- */
-  header { padding: 88px 0 56px; }
-  .eyebrow {
-    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-    font-size: 13px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 0 0 14px;
-  }
-  .eyebrow::before { content: "▲ "; color: var(--accent); }
-  h1 {
-    font-size: clamp(40px, 8vw, 64px);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin: 0 0 18px;
-  }
-  .tagline {
-    font-size: clamp(17px, 2.5vw, 20px);
-    color: var(--muted);
-    max-width: 560px;
-    margin: 0 0 28px;
-  }
-  .tagline strong { color: var(--text); font-weight: 600; }
-  .hero-links { display: flex; flex-wrap: wrap; gap: 12px; }
-  .hero-links a {
-    display: inline-block;
-    padding: 9px 18px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    font-size: 15px;
-    color: var(--text);
-    transition: border-color .15s, background .15s;
-  }
-  .hero-links a:hover { border-color: var(--accent); background: var(--accent-soft); text-decoration: none; }
-  .hero-links a.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
-  .hero-links a.primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
-  @media (prefers-color-scheme: dark) {
-    .hero-links a.primary:hover { color: #0c130f; }
-  }
-
-  /* ---------- sections ---------- */
-  .section-label {
-    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-    font-size: 13px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0 0 24px;
-  }
-  .section-label::after { content: ""; flex: 1; height: 1px; background: var(--border); }
-
-  /* ---------- project cards ---------- */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-    gap: 16px;
-  }
-  .card {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 22px 22px 18px;
-    transition: border-color .15s, transform .15s;
-  }
-  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
-  .card-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-  .card h2 { font-size: 18px; margin: 0; letter-spacing: -0.01em; }
-  .card h2 a { color: var(--text); }
-  .card h2 a:hover { color: var(--accent); }
-  .tag {
-    flex-shrink: 0;
-    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-    font-size: 11.5px;
-    color: var(--accent);
-    background: var(--accent-soft);
-    border-radius: 5px;
-    padding: 2px 8px;
-    white-space: nowrap;
-  }
-  .card p { margin: 0; font-size: 14.5px; color: var(--muted); flex: 1; }
-  .card pre {
-    margin: 14px 0 0;
-    padding: 10px 12px;
-    background: var(--code-bg);
-    border-radius: 8px;
-    font-size: 11.5px;
+    max-width: 700px;
+    margin: 2em auto;
+    padding: 0 1em;
+    font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     line-height: 1.5;
-    overflow-x: auto;
-    color: var(--muted);
+    background: #fff;
+    color: #000;
   }
-  .card-links { display: flex; gap: 16px; margin-top: 14px; font-size: 14px; }
-
-  /* ---------- footer ---------- */
-  .more { margin: 36px 0 0; font-size: 15px; }
-  .more .oss { color: var(--muted); }
-  footer {
-    margin-top: 72px;
-    padding: 28px 0 40px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 14px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 24px;
-    justify-content: space-between;
-  }
+  a { color: #00e; }
+  a:visited { color: #551a8b; }
+  h1 { font-size: 1.6em; margin-bottom: 0.2em; }
+  h2 { font-size: 1em; margin: 1.5em 0 0.3em; }
+  ul { margin: 0; padding-left: 1.4em; }
+  li { margin: 0.25em 0; }
 </style>
 </head>
 <body>
 
-<div class="wrap">
+<h1>gapsong</h1>
+<p>Software engineer in Berlin. LLM quantization with explainable AI, agent ergonomics, small tools.
+   Contact: <a href="https://github.com/gapsong">github.com/gapsong</a></p>
 
-  <header>
-    <p class="eyebrow">Berlin · software engineer</p>
-    <h1>gapsong</h1>
-    <p class="tagline">Exploring <strong>LLM quantization</strong> with explainable AI —
-      and building tools for <strong>agent ergonomics</strong>, terminals, and the
-      occasional chess board along the way.</p>
-    <nav class="hero-links" aria-label="Contact">
-      <a class="primary" href="https://github.com/gapsong">GitHub</a>
-      <a href="mailto:dickerjunge36@gmail.com">Email</a>
-      <a href="https://axi.md/">axi.md</a>
-    </nav>
-  </header>
+<!-- PROJECTS — one <li> per project: link — one-line description.
+     To add/remove a project, add/delete a line. -->
 
-  <main>
-    <h2 class="section-label" id="projects">Selected projects</h2>
+<h2>research</h2>
+<ul>
+  <li><a href="https://github.com/gapsong/sa-svd-qa-lora">sa-svd-qa-lora</a> — structure-aware SVD initialization for QA-LoRA fine-tuning of 2-bit LLMs; −15% to −48% WikiText perplexity on all 3 models tested</li>
+  <li><a href="https://github.com/gapsong/axi">axi</a> — design principles for agent ergonomics; higher accuracy at lower token cost than MCP or regular CLI (<a href="https://axi.md/">axi.md</a>)</li>
+</ul>
 
-    <!-- ============================================================
-         PROJECT CARDS — to add/remove a project, copy or delete one
-         <article class="card"> block below. Order on the page = order here.
-         ============================================================ -->
-    <div class="grid">
+<h2>tools</h2>
+<ul>
+  <li><a href="https://github.com/gapsong/claude-code-statusline">claude-code-statusline</a> — Claude Code terminal statusline: model, context bar, usage, git branch; one portable bash script</li>
+  <li><a href="https://github.com/gapsong/ger-viet-android-keyboard">ger-viet-android-keyboard</a> — Android keyboard optimized for Vietnamese and German</li>
+</ul>
 
-      <article class="card">
-        <div class="card-head">
-          <h2><a href="https://github.com/gapsong/axi">axi</a></h2>
-          <span class="tag">agent design</span>
-        </div>
-        <p>Design principles for agent ergonomics — higher accuracy at lower token
-           cost than both MCP and regular CLI tools.</p>
-        <div class="card-links">
-          <a href="https://axi.md/">Site ↗</a>
-          <a href="https://github.com/gapsong/axi">Repo ↗</a>
-        </div>
-      </article>
+<h2>fun</h2>
+<ul>
+  <li><a href="https://gapsong.github.io/lichess-kill-anim/">lichess-kill-anim</a> — Tampermonkey userscript: capture kill-animations and tactical hints on lichess.org (<a href="https://github.com/gapsong/lichess-kill-anim">repo</a>)</li>
+  <li><a href="https://github.com/gapsong/ClipStitch">ClipStitch</a> — auto "best of" Twitch videos from chat activity</li>
+</ul>
 
-      <article class="card">
-        <div class="card-head">
-          <h2><a href="https://github.com/gapsong/sa-svd-qa-lora">sa-svd-qa-lora</a></h2>
-          <span class="tag">Python</span>
-        </div>
-        <p>Structure-aware SVD initialization for QA-LoRA fine-tuning of 2-bit LLMs.
-           Lower WikiText perplexity on all 3 models tested (−15% to −48%), and makes
-           Qwen2-1.5B trainable where random init diverges.</p>
-        <div class="card-links">
-          <a href="https://github.com/gapsong/sa-svd-qa-lora">Repo ↗</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-head">
-          <h2><a href="https://github.com/gapsong/claude-code-statusline">claude-code-statusline</a></h2>
-          <span class="tag">bash</span>
-        </div>
-        <p>Claude Code terminal statusline: model, context bar, 5h/7d usage, reset
-           countdown, git branch and folder — one portable bash script.</p>
-        <pre>✨ Opus │ █····· 13% │ ⎇ main</pre>
-        <div class="card-links">
-          <a href="https://github.com/gapsong/claude-code-statusline">Repo ↗</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-head">
-          <h2><a href="https://gapsong.github.io/lichess-kill-anim/">lichess-kill-anim</a></h2>
-          <span class="tag">JavaScript</span>
-        </div>
-        <p>Tampermonkey userscript that adds capture kill-animations and tactical
-           hints to lichess.org.</p>
-        <div class="card-links">
-          <a href="https://gapsong.github.io/lichess-kill-anim/">Showcase ↗</a>
-          <a href="https://github.com/gapsong/lichess-kill-anim">Repo ↗</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-head">
-          <h2><a href="https://github.com/gapsong/ClipStitch">ClipStitch</a></h2>
-          <span class="tag">JavaScript</span>
-        </div>
-        <p>Auto-generated “best of” Twitch videos: mines chat activity to find the
-           funniest clips and stitches them into one highlight reel.</p>
-        <div class="card-links">
-          <a href="https://github.com/gapsong/ClipStitch">Repo ↗</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-head">
-          <h2><a href="https://github.com/gapsong/ger-viet-android-keyboard">ger-viet-android-keyboard</a></h2>
-          <span class="tag">Kotlin</span>
-        </div>
-        <p>Android keyboard optimized for typing Vietnamese and German on one layout.</p>
-        <div class="card-links">
-          <a href="https://github.com/gapsong/ger-viet-android-keyboard">Repo ↗</a>
-        </div>
-      </article>
-
-    </div>
-    <!-- ============================ end cards ============================ -->
-
-    <p class="more">
-      <span class="oss">Also contributing upstream to open-source ML tooling.</span>
-      <a href="https://github.com/gapsong">More on GitHub →</a>
-    </p>
-  </main>
-
-  <footer>
-    <span>© 2026 gapsong</span>
-    <span class="mono">Berlin · <a href="https://github.com/gapsong">github.com/gapsong</a></span>
-  </footer>
-
-</div>
+<p><a href="https://github.com/gapsong">More on GitHub &rarr;</a></p>
 
 </body>
 </html>
