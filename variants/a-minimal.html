@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gapsong — variant A: minimal mono</title>
+<meta name="description" content="gapsong — software engineer in Berlin. LLM quantization, agent ergonomics, small tools.">
+<style>
+  :root {
+    --bg: #fafafa;
+    --fg: #1a1a1a;
+    --dim: #6b6b6b;
+    --accent: #0a7d33;
+    --line: #e0e0e0;
+    --link: #1a1a1a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101211;
+      --fg: #d8dcd9;
+      --dim: #7d847f;
+      --accent: #4cc272;
+      --line: #262a27;
+      --link: #d8dcd9;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  main {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 4rem 1.25rem 5rem;
+  }
+  header h1 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.02em;
+  }
+  header h1::before { content: "~/"; color: var(--accent); }
+  header p {
+    margin: 0.75rem 0 0;
+    color: var(--dim);
+    max-width: 36rem;
+  }
+  header a { color: var(--accent); text-decoration: none; }
+  header a:hover { text-decoration: underline; }
+  section { margin-top: 3rem; }
+  h2 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--dim);
+    margin: 0 0 0.25rem;
+  }
+  h2::before { content: "# "; color: var(--accent); }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  li:last-child { border-bottom: none; }
+  .name {
+    color: var(--link);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
+  .name:hover { color: var(--accent); }
+  .desc {
+    display: block;
+    color: var(--dim);
+    margin-top: 0.15rem;
+  }
+  .desc a { color: var(--dim); }
+  .desc a:hover { color: var(--accent); }
+  .metric { color: var(--accent); }
+  .tag {
+    color: var(--dim);
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
+  footer {
+    margin-top: 4rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    color: var(--dim);
+    font-size: 0.8rem;
+  }
+  footer a { color: var(--dim); }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>gapsong</h1>
+  <p>Software engineer in Berlin. LLM quantization with explainable AI, agent ergonomics, small tools.
+     Contact: <a href="https://github.com/gapsong">github.com/gapsong</a></p>
+</header>
+
+<!-- PROJECTS — one <li> per project: link — one-line description. -->
+
+<section>
+  <h2>research</h2>
+  <ul>
+    <li>
+      <a class="name" href="https://github.com/gapsong/sa-svd-qa-lora">sa-svd-qa-lora</a>
+      <span class="desc">structure-aware SVD initialization for QA-LoRA fine-tuning of 2-bit LLMs; <span class="metric">−15% to −48%</span> WikiText perplexity on all 3 models tested</span>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>tools</h2>
+  <ul>
+    <li>
+      <a class="name" href="https://github.com/gapsong/claude-code-statusline">claude-code-statusline</a>
+      <span class="desc">Claude Code terminal statusline: model, context bar, usage, git branch; one portable bash script</span>
+    </li>
+    <li>
+      <a class="name" href="https://github.com/gapsong/ger-viet-android-keyboard">ger-viet-android-keyboard</a>
+      <span class="desc">Android keyboard optimized for Vietnamese and German</span>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>fun</h2>
+  <ul>
+    <li>
+      <a class="name" href="https://gapsong.github.io/lichess-kill-anim/">lichess-kill-anim</a><span class="tag">[<a href="https://github.com/gapsong/lichess-kill-anim">repo</a>]</span>
+      <span class="desc">Tampermonkey userscript: capture kill-animations and tactical hints on lichess.org</span>
+    </li>
+    <li>
+      <a class="name" href="https://github.com/gapsong/ClipStitch">ClipStitch</a>
+      <span class="desc">auto "best of" Twitch videos from chat activity</span>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>open source contributions</h2>
+  <ul>
+    <li>
+      <a class="name" href="https://github.com/huggingface/peft/pull/2571">huggingface/peft #2571</a><span class="tag">merged</span>
+      <span class="desc">added Quantization-Aware Low-Rank Adaptation (QALoRA) support to HuggingFace PEFT</span>
+    </li>
+    <li>
+      <a class="name" href="https://github.com/huggingface/peft/pull/2664">huggingface/peft #2664</a><span class="tag">merged</span>
+      <span class="desc">fixed the tokenizer parameter in SFTTrainer examples across PEFT</span>
+    </li>
+    <li>
+      <span class="desc">More: <a href="https://huggingface.co/gapsong">huggingface.co/gapsong</a></span>
+    </li>
+  </ul>
+</section>
+
+<footer>
+  <a href="https://github.com/gapsong">github</a> · <a href="https://huggingface.co/gapsong">huggingface</a>
+</footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gapsong — design variants</title>
+<style>
+  :root { --bg: #fff; --fg: #111; --dim: #666; --line: #ddd; --link: #00e; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #131313; --fg: #e6e6e6; --dim: #999; --line: #333; --link: #8ab4f8; }
+  }
+  body {
+    max-width: 640px;
+    margin: 3em auto;
+    padding: 0 1em;
+    font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    background: var(--bg);
+    color: var(--fg);
+  }
+  h1 { font-size: 1.4em; margin-bottom: 0.2em; }
+  p.hint { color: var(--dim); margin-top: 0; }
+  ol { padding-left: 1.4em; }
+  li { margin: 1em 0; }
+  a { color: var(--link); font-weight: 600; }
+  .vibe { color: var(--dim); font-weight: 400; }
+</style>
+</head>
+<body>
+
+<h1>Portfolio redesign — pick a direction</h1>
+<p class="hint">Three standalone variants, same content as the live site, different look. Open each on your phone; all are responsive and dark-mode aware.</p>
+
+<ol>
+  <li><a href="a-minimal.html">A — minimal mono</a><br>
+      <span class="vibe">Quiet terminal aesthetic: monospace, hairline dividers, one green accent. Closest in spirit to the current plain site.</span></li>
+  <li><a href="b-editorial.html">B — editorial</a><br>
+      <span class="vibe">Magazine feel: huge serif headline, numbered sections, warm paper tones, thick rules.</span></li>
+  <li><a href="c-playful.html">C — playful cards</a><br>
+      <span class="vibe">Colorful neo-brutalist cards: color-coded sections, chunky shadows, hover pop, emoji headings.</span></li>
+</ol>
+
+</body>
+</html>

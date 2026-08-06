@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gapsong — variant B: editorial</title>
+<meta name="description" content="gapsong — software engineer in Berlin. LLM quantization, agent ergonomics, small tools.">
+<style>
+  :root {
+    --bg: #faf7f2;
+    --fg: #1c1a17;
+    --dim: #6e675e;
+    --accent: #a33b20;
+    --rule: #1c1a17;
+    --rule-light: #d9d2c7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17150f;
+      --fg: #e8e2d6;
+      --dim: #948c7d;
+      --accent: #e07a5f;
+      --rule: #e8e2d6;
+      --rule-light: #38342a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 6rem;
+  }
+  .kicker {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--accent);
+    margin: 0 0 1rem;
+  }
+  h1 {
+    font-size: clamp(3rem, 11vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1.0;
+    margin: 0 0 1.5rem;
+    letter-spacing: -0.02em;
+  }
+  .lede {
+    font-size: clamp(1.15rem, 3vw, 1.45rem);
+    line-height: 1.5;
+    max-width: 34rem;
+    margin: 0 0 0.75rem;
+    font-style: italic;
+    color: var(--dim);
+  }
+  .contact {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--dim);
+  }
+  a { color: inherit; text-decoration-color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--accent); }
+  section { margin-top: 4rem; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-top: 3px solid var(--rule);
+    padding-top: 0.6rem;
+    margin-bottom: 1.75rem;
+  }
+  .section-num {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+  h2 {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin: 0;
+  }
+  article { margin-bottom: 2.25rem; }
+  article:last-child { margin-bottom: 0; }
+  h3 {
+    font-size: clamp(1.5rem, 4.5vw, 2rem);
+    font-weight: 400;
+    margin: 0 0 0.35rem;
+    line-height: 1.15;
+  }
+  h3 a { text-decoration: none; }
+  h3 a:hover { text-decoration: underline; text-decoration-color: var(--accent); }
+  article p {
+    margin: 0;
+    max-width: 36rem;
+    color: var(--dim);
+    font-size: 1.05rem;
+  }
+  .note {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-top: 0.4rem;
+  }
+  .note a { color: var(--accent); }
+  .more {
+    border-top: 1px solid var(--rule-light);
+    padding-top: 1rem;
+    font-size: 1rem;
+    color: var(--dim);
+  }
+  footer {
+    margin-top: 5rem;
+    border-top: 3px solid var(--rule);
+    padding-top: 0.75rem;
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--dim);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <p class="kicker">Berlin, Germany</p>
+  <h1>gapsong</h1>
+  <p class="lede">Software engineer working on LLM quantization with explainable AI, agent ergonomics, and small tools.</p>
+  <p class="contact">Contact: <a href="https://github.com/gapsong">github.com/gapsong</a></p>
+</header>
+
+<!-- PROJECTS — one <article> per project. -->
+
+<section>
+  <div class="section-head"><span class="section-num">01</span><h2>Research</h2></div>
+  <article>
+    <h3><a href="https://github.com/gapsong/sa-svd-qa-lora">sa-svd-qa-lora</a></h3>
+    <p>Structure-aware SVD initialization for QA-LoRA fine-tuning of 2-bit LLMs; −15% to −48% WikiText perplexity on all 3 models tested.</p>
+  </article>
+</section>
+
+<section>
+  <div class="section-head"><span class="section-num">02</span><h2>Tools</h2></div>
+  <article>
+    <h3><a href="https://github.com/gapsong/claude-code-statusline">claude-code-statusline</a></h3>
+    <p>Claude Code terminal statusline: model, context bar, usage, git branch; one portable bash script.</p>
+  </article>
+  <article>
+    <h3><a href="https://github.com/gapsong/ger-viet-android-keyboard">ger-viet-android-keyboard</a></h3>
+    <p>Android keyboard optimized for Vietnamese and German.</p>
+  </article>
+</section>
+
+<section>
+  <div class="section-head"><span class="section-num">03</span><h2>Fun</h2></div>
+  <article>
+    <h3><a href="https://gapsong.github.io/lichess-kill-anim/">lichess-kill-anim</a></h3>
+    <p>Tampermonkey userscript: capture kill-animations and tactical hints on lichess.org.</p>
+    <p class="note"><a href="https://github.com/gapsong/lichess-kill-anim">source repository</a></p>
+  </article>
+  <article>
+    <h3><a href="https://github.com/gapsong/ClipStitch">ClipStitch</a></h3>
+    <p>Auto "best of" Twitch videos from chat activity.</p>
+  </article>
+</section>
+
+<section>
+  <div class="section-head"><span class="section-num">04</span><h2>Open Source Contributions</h2></div>
+  <article>
+    <h3><a href="https://github.com/huggingface/peft/pull/2571">huggingface/peft #2571</a></h3>
+    <p>Added Quantization-Aware Low-Rank Adaptation (QALoRA) support to HuggingFace PEFT.</p>
+    <p class="note">Merged</p>
+  </article>
+  <article>
+    <h3><a href="https://github.com/huggingface/peft/pull/2664">huggingface/peft #2664</a></h3>
+    <p>Fixed the tokenizer parameter in SFTTrainer examples across PEFT.</p>
+    <p class="note">Merged</p>
+  </article>
+  <p class="more">More at <a href="https://huggingface.co/gapsong">huggingface.co/gapsong</a>.</p>
+</section>
+
+<footer>
+  <span>gapsong</span>
+  <span><a href="https://github.com/gapsong">GitHub</a> — <a href="https://huggingface.co/gapsong">Hugging Face</a></span>
+</footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gapsong — variant C: playful</title>
+<meta name="description" content="gapsong — software engineer in Berlin. LLM quantization, agent ergonomics, small tools.">
+<style>
+  :root {
+    --bg: #f4f1ff;
+    --card: #ffffff;
+    --fg: #241f3d;
+    --dim: #6b6485;
+    --shadow: #241f3d;
+    --research: #7c5cff;
+    --tools: #0ea5a0;
+    --fun: #f4586f;
+    --oss: #e8930c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17142a;
+      --card: #221e3b;
+      --fg: #eceaf6;
+      --dim: #9d97b8;
+      --shadow: #0b0918;
+      --research: #a08bff;
+      --tools: #2fd4cd;
+      --fun: #ff7a8d;
+      --oss: #ffb03a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.55;
+  }
+  main {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 3.5rem 1.25rem 5rem;
+  }
+  h1 {
+    font-size: clamp(2.4rem, 8vw, 3.8rem);
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.03em;
+  }
+  h1 .wave { display: inline-block; }
+  .intro {
+    font-size: 1.15rem;
+    max-width: 38rem;
+    margin: 0 0 0.5rem;
+    color: var(--dim);
+  }
+  .intro strong { color: var(--fg); }
+  .contact-btn {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1.1rem;
+    background: var(--research);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 999px;
+    border: 2px solid var(--shadow);
+    box-shadow: 3px 3px 0 var(--shadow);
+    transition: transform 0.1s, box-shadow 0.1s;
+  }
+  .contact-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--shadow);
+  }
+  section { margin-top: 3rem; }
+  h2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin: 0 0 1.1rem;
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    border: 2px solid var(--shadow);
+    color: #fff;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+    gap: 1.25rem;
+  }
+  .card {
+    display: block;
+    background: var(--card);
+    border: 2px solid var(--shadow);
+    border-radius: 1rem;
+    padding: 1.25rem 1.25rem 1.4rem;
+    text-decoration: none;
+    color: var(--fg);
+    box-shadow: 5px 5px 0 var(--shadow);
+    transition: transform 0.12s, box-shadow 0.12s;
+    border-top-width: 8px;
+  }
+  .card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0 var(--shadow);
+  }
+  .card h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+  }
+  .card p { margin: 0; color: var(--dim); font-size: 0.95rem; }
+  .card .metric { font-weight: 700; }
+  .badge {
+    display: inline-block;
+    margin-top: 0.7rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    border: 1.5px solid var(--shadow);
+    color: var(--fg);
+  }
+  .sublink {
+    margin-top: 0.7rem;
+    font-size: 0.85rem;
+  }
+  .sublink a { color: var(--dim); font-weight: 600; }
+  section.research h2 { background: var(--research); }
+  section.research .card { border-top-color: var(--research); }
+  section.research .metric { color: var(--research); }
+  section.tools h2 { background: var(--tools); }
+  section.tools .card { border-top-color: var(--tools); }
+  section.fun h2 { background: var(--fun); }
+  section.fun .card { border-top-color: var(--fun); }
+  section.oss h2 { background: var(--oss); }
+  section.oss .card { border-top-color: var(--oss); }
+  section.oss .badge { background: color-mix(in srgb, var(--oss) 25%, transparent); }
+  .more-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    min-height: 6rem;
+    text-align: center;
+  }
+  footer {
+    margin-top: 4rem;
+    text-align: center;
+    color: var(--dim);
+    font-size: 0.9rem;
+  }
+  footer a { color: var(--dim); font-weight: 700; }
+  @media (prefers-reduced-motion: reduce) {
+    .card, .contact-btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1><span class="wave">👋</span> hi, I'm gapsong</h1>
+  <p class="intro">Software engineer in <strong>Berlin</strong>. I work on <strong>LLM quantization with explainable AI</strong>, <strong>agent ergonomics</strong>, and small tools.</p>
+  <a class="contact-btn" href="https://github.com/gapsong">github.com/gapsong →</a>
+</header>
+
+<!-- PROJECTS — one .card per project. -->
+
+<section class="research">
+  <h2>🔬 research</h2>
+  <div class="grid">
+    <a class="card" href="https://github.com/gapsong/sa-svd-qa-lora">
+      <h3>sa-svd-qa-lora</h3>
+      <p>Structure-aware SVD initialization for QA-LoRA fine-tuning of 2-bit LLMs; <span class="metric">−15% to −48%</span> WikiText perplexity on all 3 models tested.</p>
+    </a>
+  </div>
+</section>
+
+<section class="tools">
+  <h2>🛠️ tools</h2>
+  <div class="grid">
+    <a class="card" href="https://github.com/gapsong/claude-code-statusline">
+      <h3>claude-code-statusline</h3>
+      <p>Claude Code terminal statusline: model, context bar, usage, git branch; one portable bash script.</p>
+    </a>
+    <a class="card" href="https://github.com/gapsong/ger-viet-android-keyboard">
+      <h3>ger-viet-android-keyboard</h3>
+      <p>Android keyboard optimized for Vietnamese and German.</p>
+    </a>
+  </div>
+</section>
+
+<section class="fun">
+  <h2>🎮 fun</h2>
+  <div class="grid">
+    <div class="card" style="cursor:auto">
+      <h3><a href="https://gapsong.github.io/lichess-kill-anim/" style="color:inherit">lichess-kill-anim</a></h3>
+      <p>Tampermonkey userscript: capture kill-animations and tactical hints on lichess.org.</p>
+      <p class="sublink"><a href="https://gapsong.github.io/lichess-kill-anim/">demo</a> · <a href="https://github.com/gapsong/lichess-kill-anim">repo</a></p>
+    </div>
+    <a class="card" href="https://github.com/gapsong/ClipStitch">
+      <h3>ClipStitch</h3>
+      <p>Auto "best of" Twitch videos from chat activity.</p>
+    </a>
+  </div>
+</section>
+
+<section class="oss">
+  <h2>🌱 open source</h2>
+  <div class="grid">
+    <a class="card" href="https://github.com/huggingface/peft/pull/2571">
+      <h3>huggingface/peft #2571</h3>
+      <p>Added Quantization-Aware Low-Rank Adaptation (QALoRA) support to HuggingFace PEFT.</p>
+      <span class="badge">✓ merged</span>
+    </a>
+    <a class="card" href="https://github.com/huggingface/peft/pull/2664">
+      <h3>huggingface/peft #2664</h3>
+      <p>Fixed the tokenizer parameter in SFTTrainer examples across PEFT.</p>
+      <span class="badge">✓ merged</span>
+    </a>
+    <a class="card more-card" href="https://huggingface.co/gapsong">
+      more on huggingface.co/gapsong →
+    </a>
+  </div>
+</section>
+
+<footer>
+  made in Berlin · <a href="https://github.com/gapsong">GitHub</a> · <a href="https://huggingface.co/gapsong">Hugging Face</a>
+</footer>
+
+</main>
+</body>
+</html>
